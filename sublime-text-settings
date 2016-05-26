@@ -1,0 +1,10 @@
+{
+	"color_scheme": "Packages/Color Scheme - Kuroir/Kuroir Theme.tmTheme",
+	"theme": "Soda Light.sublime-theme",
+	"draw_white_space": "all",
+	"auto_indent": false,
+	"smart_indent": false,
+	"indent_to_bracket": false,
+  "auto_match_enabled" : false,
+  "translate_tabs_to_spaces": true
+}
