@@ -5,6 +5,14 @@
 	"auto_indent": false,
 	"smart_indent": false,
 	"indent_to_bracket": false,
-        "auto_match_enabled" : false,
-        "translate_tabs_to_spaces": true
+    "auto_match_enabled": false,
+    "rulers": [79, 100, 120],
+    "word_wrap": true,
+    "wrap_width": 79,
+    "default_line_ending": "unix",
+    "auto_close_tags": false,
+    "indent_subsequent_lines": false,
+    "show_encoding": true,
+     "show_line_endings": true,
+    "translate_tabs_to_spaces": true
 }
