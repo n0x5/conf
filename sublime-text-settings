@@ -12,6 +12,6 @@
     "auto_close_tags": false,
     "indent_subsequent_lines": false,
     "show_encoding": true,
-     "show_line_endings": true,
+    "show_line_endings": true,
     "translate_tabs_to_spaces": true
 }
