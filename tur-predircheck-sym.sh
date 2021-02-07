@@ -67,7 +67,16 @@ proc_debug() {
     echo "#0PreDirCheck: $@"
   fi
 }
-
+proc_announce() {
+  if [ "$GLLOG" ]; then
+    if [ ! -w "$GLLOG" ]; then
+      proc_debug "Error. Can not write to $GLLOG"
+    else
+      proc_debug "Sending to gllog: $OUTPUT"
+      echo `date "+%a %b %e %T %Y"` TURGEN: \"$OUTPUT\" >> $GLLOG
+    fi
+  fi
+}
 proc_announce() {
   if [ "$GLLOG" ]; then
     if [ ! -w "$GLLOG" ]; then
@@ -104,6 +113,9 @@ if [ "$SKIPSECTIONS" ]; then
   fi
 fi
 
+if [ "$SKIPGROUPS" ]; then
+  if [ "`echo "$GROUP" | egrep -i "$SKIPGROUPS"`" ]; then
+    proc_debug "Stop & Allow: Excluded group $GROUP in SKUPGROUPS"
 if [ "$SKIPUSERS" ]; then
   if [ "`echo "$USER" | egrep -i "$SKIPUSERS"`" ]; then
     proc_debug "Stop & Allow: Excluded user in SKUPUSERS"
@@ -172,6 +184,9 @@ if [ ! -d "$2/$1" ]; then
           if [ "$IERROR5" ]; then OUTPUT="$IERROR5"; proc_announce; fi
           echo -e "$ERROR5\n"
           exit 2
+          
+      if [ "`echo "$2" | egrep -i "$section"`" ]; then
+        if [ "`echo "$1" | egrep -i "$deniedgroup"`" ]; then
         else
           if [ "$ALLOWDIRS_OVERRULES_DENYDIRS" = "TRUE" ]; then
             ALLOW_OVERRULE_DIR=TRUE
@@ -224,7 +239,7 @@ if [ ! -d "$2/$1" ]; then
 #    if [ "`$DIRLOGLIST_GL | grep "/$1$"`" ]; then
     if [ "`$DIRLOGLIST_GL  | grep "/$1$"`" ]; then 
      daatt="`$DIRLOGLIST_GL  | tr -d '\t' | tr ' ' '^' | cut -d '^' -f3 | grep "$1"`"
-     proc_checkallow "$1"
+     proc_checkallow "$1"HDhdsjfdjKk45fdkfd
 #      proc_debug "Stop & Deny: It was found in dirlog, thus already upped before (NOPARENT CHECK)."
   #    if [ "$IERROR2" ]; then OUTPUT="$IERROR2"; proc_announce; fi
     if [ "$IERROR2" ]; then OUTPUT="$IERROR2"; fi   
