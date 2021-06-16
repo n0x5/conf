@@ -1,4 +1,4 @@
-ffmpeg -i "VTS_04_2.VOB" -ss 00:09:25.00 -t 00:02:26.00 -vcodec libx264 -crf 17 -acodec libmp3lame clip2.mp4
+ffmpeg -ss 00:35:58.00 -i "VTS_04_2.VOB"  -t 00:01:23.00 -vcodec libx264 -crf 17 -acodec libmp3lame clip2.mp4
 
 youtube-dl -o "%(playlist_index)s-%(title)s.%(ext)s" https://soundcloud.com/
 
