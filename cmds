@@ -8,6 +8,8 @@ select movies.release, movies.imdb, companyinfo.imdbid from movies join companyi
 
 select movies.*, companyinfo.* from movies join companyinfo on movies.release = companyinfo.release;
 
+select movies.release, movies.imdb, movie_genres.genre from movies join movie_genres on movie_genres.imdb_id = substr(movies.imdb, -9) where movies.release like '%taken%' GROUP BY movies.release, movie_genres.genre HAVING COUNT(movies.release) >1;
+
 attach 'F:\dev\flask3\boxofficemojo-alternate.db' as toMerge;
 BEGIN;
 insert or ignore into boxoffice_alt select * from toMerge.boxoffice;
