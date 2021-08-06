@@ -12,7 +12,7 @@ select movies.release, movies.imdb, movie_genres.genre from movies join movie_ge
 
 select movies.release, box_imdb.rlid, boxoffice_wide.theatersopen from movies join box_imdb on box_imdb.imdbid = substr(movies.imdb, -9) join boxoffice_wide on substr(box_imdb.rlid, 3) = boxoffice_wide.rl_id;
 
-select movies.release, box_imdb.rlid, boxoffice_wide.theatersopen from movies join box_imdb on box_imdb.imdbid = substr(movies.imdb, -9) join boxoffice_wide on substr(box_imdb.rlid, 3) = boxoffice_wide.rl_id where movies.infogenres like '%adventure%' and theatersopen > 2000;
+select movies.release, box_imdb.rlid, boxoffice_wide.theatersopen from movies join box_imdb on box_imdb.imdbid = substr(movies.imdb, -9) join boxoffice_wide on substr(box_imdb.rlid, 3) = boxoffice_wide.rl_id where movies.infogenres like '%adventure%' and theatersopen > 2000 group by movies.release;
 
 attach 'F:\dev\flask3\boxofficemojo-alternate.db' as toMerge;
 BEGIN;
