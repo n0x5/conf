@@ -21,3 +21,5 @@ COMMIT;
 detach toMerge;
 
 ~="-web_"
+
+yt-dlp --merge-output-format mkv --add-metadata -f 247+251
