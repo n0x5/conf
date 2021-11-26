@@ -23,3 +23,6 @@ detach toMerge;
 ~="-web_"
 
 yt-dlp --merge-output-format mkv --add-metadata -f 247+251
+
+/etc/gai.conf
+precedence ::ffff:0:0/96  100
