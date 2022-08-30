@@ -1,0 +1,6 @@
+.rating-bar__base-button {
+    display: none !important;
+}
+body {
+overflow-y: scroll;
+}
