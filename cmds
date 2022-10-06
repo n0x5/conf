@@ -26,3 +26,5 @@ yt-dlp --merge-output-format mkv --add-metadata -f 247+251
 
 /etc/gai.conf
 precedence ::ffff:0:0/96  100
+
+pip download --prefer-binary --dest "F:\dev\wheel2" --no-cache pyinstaller
