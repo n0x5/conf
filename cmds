@@ -30,3 +30,5 @@ precedence ::ffff:0:0/96  100
 pip download --prefer-binary --dest "F:\dev\wheel2" --no-cache pyinstaller
 
 %title% <<<<{$info(codec) $if([$info(codec_profile)],| $info(codec_profile) |,|) $info(bitrate)kbps | $if([$info(md5)],$info(md5)},$info(tagtype)})>>>>
+
+for f in ./*.nzb; do nzbget $f; done;
