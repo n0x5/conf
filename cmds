@@ -37,3 +37,5 @@ javascript:(function(){ var r="html,body{overflow:auto !important;}";  var s=doc
 
 wget -r -np -R "index.html*" --no-check-certificate
 
+par2 create -r20 -l
+
