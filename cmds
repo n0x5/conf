@@ -39,3 +39,5 @@ wget -r -np -R "index.html*" --no-check-certificate
 
 par2 create -r20 -l
 
+robocopy "\\NAS1\archive\archive\_personal\camera" "F:\archive\_personal\camera" /e /w:5 /r:2 /COPY:DAT /DCOPY:DAT /MT
+
